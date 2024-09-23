@@ -12,10 +12,9 @@ public class Car {
 
     private String model;
 
-    @ManyToMany(mappedBy = "cars") // The owner of the relationship is Driver, so no need for @JoinTable here
+    @ManyToMany(mappedBy = "cars")
     private Set<Driver> drivers = new HashSet<>();
 
-    // Getters and Setters
     public Long getId() {
         return id;
     }

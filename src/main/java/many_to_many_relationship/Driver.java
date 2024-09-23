@@ -15,13 +15,12 @@ public class Driver {
 
     @ManyToMany
     @JoinTable(
-            name = "driver_car", // name of the join table
-            joinColumns = @JoinColumn(name = "driver_id"), // foreign key for Driver
-            inverseJoinColumns = @JoinColumn(name = "car_id") // foreign key for Car
+            name = "driver_car",
+            joinColumns = @JoinColumn(name = "driver_id"),
+            inverseJoinColumns = @JoinColumn(name = "car_id")
     )
     private Set<Car> cars = new HashSet<>();
 
-    // Getters and Setters
     public Long getId() {
         return id;
     }
