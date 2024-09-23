@@ -1,7 +1,9 @@
+package one_to_one_relationship;
+
 import jakarta.persistence.*;
 
-@Entity
-public class Driver {
+@Entity(name = "DriverOneToOne")
+public class DriverOneToOne {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -10,14 +12,14 @@ public class Driver {
     private int experience;
 
     @OneToOne(mappedBy = "driver")
-    private Car car;
+    private CarOneToOne carOneToOne;
 
-    public Car getCar() {
-        return car;
+    public CarOneToOne getCar() {
+        return carOneToOne;
     }
 
-    public void setCar(Car car) {
-        this.car = car;
+    public void setCar(CarOneToOne carOneToOne) {
+        this.carOneToOne = carOneToOne;
     }
 
     public int getExperience() {
